@@ -49,7 +49,8 @@ class Model {
       // if an identical record already exists, return it (skip create)
       return $current_record;
     }
-    // initialize container arrays for params and their associated values
+    // initialize container arra
+ys for params and their associated values
     $fields = array();
     $values = array();
     // build query parameters
@@ -69,7 +70,7 @@ class Model {
   }
 
   public function update($table_name, $data) {
-    // not used
+    // TBD
   }
 
   public function destroy($table_name, $id) {
@@ -86,18 +87,9 @@ class Model {
     return true;
   }
 
-  public function validate_user($user, $format = 'html') {
-    if(!is_numeric((int)$user['pin'])) return false;
-    if(strlen($user['pin']) < 4) return false;
-    if(strlen($user['pin']) > 4) return false;
-    $user['name'] = ereg_replace("[^A-Za-z0-9]", "", $user['name']);
-    return $user;
-  }
-  
-  public function validate_comment($comment, $format = 'html') {
-    if(strlen($comment['body']) > 1000) return false;
-    $comment['body'] = htmlspecialchars(mysql_real_escape_string($comment['body']));
-    return $comment;
+  public function validate_thing($user, $format = 'html') {
+    // add validation logic here
+    return $thing;
   }
   
   // check if an record with identical values exists inside $table_name's
