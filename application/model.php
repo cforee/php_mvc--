@@ -49,8 +49,7 @@ class Model {
       // if an identical record already exists, return it (skip create)
       return $current_record;
     }
-    // initialize container arra
-ys for params and their associated values
+    // initialize container arrays for params and their associated values
     $fields = array();
     $values = array();
     // build query parameters
